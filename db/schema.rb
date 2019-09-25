@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_03_065444) do
+ActiveRecord::Schema.define(version: 2019_09_25_120413) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.boolean "spam"
+    t.string "title"
+    t.text "text"
+    t.integer "like"
+    t.integer "dislike"
+    t.float "spam_rate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
