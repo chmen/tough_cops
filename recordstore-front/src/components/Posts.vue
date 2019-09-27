@@ -3,7 +3,7 @@
     <hr class="border border-grey-light my-6" />
 
     <ul>
-      <li v-for="post in posts">
+      <li v-for="post in posts" :key="post.id">
         {{ post.title }}
       </li>
     </ul>
@@ -13,15 +13,15 @@
 <script>
 export default {
   name: 'Posts',
-  data() {
+  data () {
     return {
       posts: [],
       error: []
     }
   },
-  created() {
+  created () {
     this.$http.secured.get('api/v1/posts')
-      .then(response => {this.posts = response.data})
+      .then(response => { this.posts = response.data })
       .catch(error => this.setError(error, 'Something went wrong'))
   },
   methods: {
