@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_25_120413) do
+ActiveRecord::Schema.define(version: 2019_10_01_073838) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2019_09_25_120413) do
     t.float "spam_rate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "link"
   end
 
   create_table "records", force: :cascade do |t|
